@@ -84,7 +84,7 @@ text_aligner = load_ASR_models(osp.join('styletts2',ASR_path), osp.join('stylett
 
 # load pretrained F0 model
 F0_path = config.get('F0_path', False)
-pitch_extractor = load_F0_models(F0_path)
+pitch_extractor = load_F0_models(osp.join('styletts2',F0_path))
 
 # load BERT model
 from Utils.PLBERT.util import load_plbert
