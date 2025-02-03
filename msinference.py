@@ -14,6 +14,7 @@ import numpy as np
 np.random.seed(0)
 
 # load packages
+from os import path as osp
 import time
 import random
 import yaml
@@ -79,7 +80,7 @@ config = yaml.safe_load(open(str(cached_path("hf://yl4579/StyleTTS2-LibriTTS/Mod
 # load pretrained ASR model
 ASR_config = config.get('ASR_config', False)
 ASR_path = config.get('ASR_path', False)
-text_aligner = load_ASR_models(ASR_path, ASR_config)
+text_aligner = load_ASR_models(osp.join('styletts2',ASR_path), osp.join('styletts2',ASR_config))
 
 # load pretrained F0 model
 F0_path = config.get('F0_path', False)
