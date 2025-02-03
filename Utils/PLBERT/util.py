@@ -13,7 +13,7 @@ class CustomAlbert(AlbertModel):
 
 
 def load_plbert(log_dir):
-    config_path = os.path.join('styletts2', log_dir, "config.yml")
+    config_path = os.path.join(log_dir, "config.yml")
     plbert_config = yaml.safe_load(open(config_path))
     
     albert_base_configuration = AlbertConfig(**plbert_config['model_params'])

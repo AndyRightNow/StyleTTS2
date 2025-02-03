@@ -89,7 +89,7 @@ pitch_extractor = load_F0_models(osp.join('styletts2',F0_path))
 # load BERT model
 from Utils.PLBERT.util import load_plbert
 BERT_path = config.get('PLBERT_dir', False)
-plbert = load_plbert(BERT_path)
+plbert = load_plbert(osp.join('styletts2',BERT_path))
 
 model_params = recursive_munch(config['model_params'])
 model = build_model(model_params, text_aligner, pitch_extractor, plbert)
